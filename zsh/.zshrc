@@ -117,5 +117,13 @@ alias sd="cd ~ && cd \$(find * -type d | fzf)"
 alias lg="lazygit"
 alias or="omz reload"
 
+# DevBox Global
+alias dbg="devbox global"
+# alias dbgl="devbox global list"
+# alias dbga="devbox global add"
+# alias dbgrm="devbox global rm"
+# alias dbgrun="devbox global run"
+
+# Eval
 eval "$(devbox global shellenv)"
 eval "$(starship init zsh)"
