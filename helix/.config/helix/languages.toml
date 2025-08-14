@@ -1,0 +1,6 @@
+[[language]]
+name = "go"
+scope = "source.go"
+file-types = ["go"]
+comment-token = "//"
+indent = { tab-width = 2, unit = "\t" }

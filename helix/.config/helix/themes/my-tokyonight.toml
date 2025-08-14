@@ -1,0 +1,4 @@
+inherits = "noctis"
+
+"ui.background" = {}
+"ui.virtual.jump-label" = "#ffffff"
