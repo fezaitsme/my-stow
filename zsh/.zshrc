@@ -80,7 +80,7 @@ zstyle ':omz:plugins:eza' 'hyperlink' yes
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aliases alias-finder aws colored-man-pages dotenv eza httpie kind kubectl poetry pre-commit terraform zoxide)
+plugins=(git aliases alias-finder aws colored-man-pages dotenv eza httpie kind kubectl poetry pre-commit terraform zoxide zsh-autosuggestions)
 
 
 source $ZSH/oh-my-zsh.sh
