@@ -1,18 +1,58 @@
 theme = "my-tokyonight"
 
 [editor]
-"true-color" = true
+auto-save = true
+true-color = true
+undercurl = true
+completion-replace = true
+trim-trailing-whitespace = true
+jump-label-alphabet = "pdfscwrxalnhueyio" # easy to reach letters on colamak dh
 
 [editor.cursor-shape]
 insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.whitespace]
+render = "all"
+
+[editor.indent-guides]
+render = true
+
 [editor.file-picker]
 hidden = false
+
+[editor.statusline]
+left = [
+  "mode",
+  "spacer",
+  "version-control",
+  "spacer",
+  "separator",
+  "file-name",
+  "file-modification-indicator"
+]
+right = [
+  "spinner",
+  "spacer",
+  "workspace-diagnostics",
+  "separator",
+  "spacer",
+  "diagnostics",
+  "position",
+  "file-encoding",
+  "file-line-ending",
+  "file-type"
+]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"
 
 [keys.normal]
 C-g = [":new", ":insert-output lazygit", ":buffer-close!", ":redraw"]
 
 [keys.normal.m]
 l = ["extend_to_line_end"]
+
+[keys.insert]
+"C-space" = "completion"

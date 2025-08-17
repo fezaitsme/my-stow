@@ -140,7 +140,18 @@ keybinds clear-defaults=true {
         bind "Alt i" { MoveTab "left"; }
         bind "Alt n" { NewPane; }
         bind "Alt o" { MoveTab "right"; }
-        bind "Ctrl q" { Quit; }
+        // bind "Ctrl q" { Quit; }
+        bind "Ctrl y" {
+            LaunchOrFocusPlugin "file:~/.config/zellij/plugins/zellij_forgot.wasm" {
+                "clean up code" "tomorrow"
+                floating true
+            }
+        }
+        bind "Ctrl q" {
+            LaunchOrFocusPlugin "zj-quit" {
+                floating true
+            }
+        }
     }
     shared_except "locked" "move" {
         bind "Ctrl h" { SwitchToMode "move"; }
@@ -217,27 +228,6 @@ keybinds clear-defaults=true {
     shared_among "session" "tmux" {
         bind "d" { Detach; }
     }
-    tmux {
-        bind "left" { MoveFocus "left"; SwitchToMode "normal"; }
-        bind "down" { MoveFocus "down"; SwitchToMode "normal"; }
-        bind "up" { MoveFocus "up"; SwitchToMode "normal"; }
-        bind "right" { MoveFocus "right"; SwitchToMode "normal"; }
-        bind "space" { NextSwapLayout; }
-        bind "\"" { NewPane "down"; SwitchToMode "normal"; }
-        bind "%" { NewPane "right"; SwitchToMode "normal"; }
-        bind "," { SwitchToMode "renametab"; }
-        bind "[" { SwitchToMode "scroll"; }
-        bind "Ctrl b" { Write 2; SwitchToMode "normal"; }
-        bind "c" { NewTab; SwitchToMode "normal"; }
-        bind "h" { MoveFocus "left"; SwitchToMode "normal"; }
-        bind "j" { MoveFocus "down"; SwitchToMode "normal"; }
-        bind "k" { MoveFocus "up"; SwitchToMode "normal"; }
-        bind "l" { MoveFocus "right"; SwitchToMode "normal"; }
-        bind "n" { GoToNextTab; SwitchToMode "normal"; }
-        bind "o" { FocusNextPane; }
-        bind "p" { GoToPreviousTab; SwitchToMode "normal"; }
-        bind "z" { ToggleFocusFullscreen; SwitchToMode "normal"; }
-    }
 }
 
 // Plugin aliases - can be used to change the implementation of Zellij
@@ -256,6 +246,7 @@ plugins {
     welcome-screen location="zellij:session-manager" {
         welcome_screen true
     }
+    zj-quit location="file:~/.config/zellij/plugins/zj-quit.wasm"
 }
 
 // Plugins to load in the background when a new session starts
