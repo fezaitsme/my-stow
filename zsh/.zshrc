@@ -128,3 +128,6 @@ alias dbg="devbox global"
 # Eval
 eval "$(devbox global shellenv)"
 eval "$(starship init zsh)"
+
+# $PATH additions
+PATH=~/lsp/elixir-ls:$PATH
