@@ -80,7 +80,7 @@ zstyle ':omz:plugins:eza' 'hyperlink' yes
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aliases alias-finder aws colored-man-pages dotenv eza httpie kind kubectl poetry pre-commit terraform zoxide zsh-autosuggestions)
+plugins=(git aliases alias-finder aws colored-man-pages dotenv eza httpie kind kubectl poetry pre-commit terraform zoxide)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -93,11 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
-else
-  export EDITOR='hx'
-fi
+export EDITOR='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -118,16 +114,9 @@ alias lg="lazygit"
 alias or="omz reload"
 alias cd="z"
 
-# DevBox Global
-alias dbg="devbox global"
-# alias dbgl="devbox global list"
-# alias dbga="devbox global add"
-# alias dbgrm="devbox global rm"
-# alias dbgrun="devbox global run"
-
 # Eval
-eval "$(devbox global shellenv)"
 eval "$(starship init zsh)"
+source /home/linuxbrew/.linuxbrew/Cellar/zsh-autosuggestions/0.7.1/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # $PATH additions
-PATH=~/lsp/elixir-ls:$PATH
+# elixir is porject specific and should pe handled in a container going forward PATH=~/lsp/elixir-ls:$PATH
